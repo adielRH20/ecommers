@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.products{
+    display: grid;
+  width: 100%;
+}
+
+.button-category{
+    width: 50%;
+    color: #fff;
+}
+
+
+.card1{
+    width: 20%;
+    height: 20%;
+    margin: 29px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 1px 10px rgba(0,0,0,0,2);
+}
+
+
+
+
+.buttoncart{
+    border-radius: 100%;
+    bottom: 10px;
+    font-size: 1.3rem;
+    height: 50px;
+    line-height: 0;
+    position: absolute;
+    right: 30px;
+    width: 50px;
+ }
