@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Shopping from './pages/Shopping'
 import ProductDetail from './pages/ProductDetail'
 import Login from './pages/Login'
-import Nab from './component/nab'
+import Nab from './component/Nab'
 import Loading from './component/Loading'
 import { useSelector } from 'react-redux'
 
