@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { filterProductsThunk } from '../store/slices/products.slice'
 import '../styles/productsDetail.css'
+import Cart from '../assets/icons/cart.svg'
+import Button from 'react-bootstrap/Button'
 
 const ProductDetail = () => {
   const { id } = useParams()
@@ -24,7 +26,7 @@ const ProductDetail = () => {
   return (
     <div className='product'>
       <h3>{product.title}</h3>
-      <img src={product.images?.[0].url} />
+      <img className='img' src={product.images?.[0].url} />
       <h2>{product.brand}</h2>
       <h1>{product.title}</h1>
       <p>{product.description}</p>
@@ -37,7 +39,7 @@ const ProductDetail = () => {
                     key={productsItem.id}
                     onClick={() => navigate(`/product/${productsItem.id}`)}
                   >
-                    <figure>
+                    <figure className='img2'>
                       <img
                         className='image' src={productsItem.images?.[0].url}
                       />
@@ -48,6 +50,9 @@ const ProductDetail = () => {
                       <h2>{productsItem.title}</h2>
                       <h3>Price:</h3>
                       <h2>{productsItem.price}</h2>
+                      <Button variant='danger'>
+                        <img src={Cart} />
+                      </Button>{' '}
                     </div>
                   </div>
                 ))

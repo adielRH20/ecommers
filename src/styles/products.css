@@ -4,9 +4,28 @@
     box-sizing: border-box;
 }
 
+.fathercontainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+    padding: 50px 100px;
+}
+
+.imgcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .products{
     display: grid;
   width: 100%;
+}
+
+.acoordion{
+   width: 20%;
 }
 
 .button-category{

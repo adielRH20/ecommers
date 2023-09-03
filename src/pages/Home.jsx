@@ -48,39 +48,50 @@ const Home = () => {
           Button
         </Button>
       </InputGroup>
+      <Accordion className='acoordion' defaultActiveKey='0'>
+        <Accordion.Item eventKey='0'>
+          <Accordion.Header>Category</Accordion.Header>
+          <Accordion.Body>
+            {categories.map((category) => (
+              <Button
+                className='button-category'
+                key={category.id}
+                onClick={() => dispatch(filterProductsThunk(category.id))}
+              >
+                {category.name}
+              </Button>
+            ))}
 
-      {categories.map((category) => (
-        <Button
-          className='button-category'
-          key={category.id}
-          onClick={() => dispatch(filterProductsThunk(category.id))}
-        >
-          {category.name}
-        </Button>
-      ))}
+          </Accordion.Body>
+        </Accordion.Item>
 
-      {productList.map((Products) => (
-        <Card
-          className='card1'
-          key={Products.id}
-          onClick={() => navigate(`/product/${Products.id}`)}
-          style={{ width: '18rem' }}
-        >
-          <Card.Img
-            className='imgcard'
-            variant='top'
-            src={Products.images[0].url}
-            style={{ width: 230 }}
-          />
-          <Card.Body className='card'>
-            <Card.Title>{Products.title}</Card.Title>
-            <Card.Text>${Products.price}</Card.Text>
-            <Button className='buttoncart' variant='danger'>
-              <img src={Cart} />
-            </Button>{' '}
-          </Card.Body>
-        </Card>
-      ))}
+      </Accordion>
+
+      <div className='fathercontainer'>
+
+        {productList.map((Products) => (
+          <Card
+            className='card1'
+            key={Products.id}
+            onClick={() => navigate(`/product/${Products.id}`)}
+            style={{ width: '18rem' }}
+          >
+            <Card.Img
+              className='imgcard'
+              variant='top'
+              src={Products.images[0].url}
+              style={{ width: 230, height: 250, objectFit: 'contain' }}
+            />
+            <Card.Body className='card'>
+              <Card.Title>{Products.title}</Card.Title>
+              <Card.Text>${Products.price}</Card.Text>
+              <Button className='buttoncart' variant='danger'>
+                <img src={Cart} />
+              </Button>{' '}
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }

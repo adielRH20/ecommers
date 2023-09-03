@@ -1,0 +1,17 @@
+.navbar{
+    height: 80px;
+}
+
+.title{
+    display: flex;
+}
+
+.bottos{
+    display: flex;
+    justify-content: end;
+}
+
+.button{
+    width: 100px;
+    
+}
